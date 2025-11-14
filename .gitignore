@@ -1,0 +1,107 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+dist/
+build/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.staging
+*.key
+*.pem
+secrets.json
+config.json
+credentials.json
+
+# Database files (personal data)
+*.db
+*.sqlite
+*.sqlite3
+passwords.db
+silentlock.db
+
+# Logs
+*.log
+logs/
+log/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+desktop.ini
+$RECYCLE.BIN/
+
+# IDE
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+
+# Personal configuration
+personal_config.py
+local_settings.py
+
+# Test files with real data
+test_real_*.py
+real_test_*.py
+
+# Installer output (keep source scripts, ignore built installers)
+installer/*.exe
+installer/*.msi
+installer/*.zip
+
+# Certificate and key files
+*.crt
+*.cert
+*.ca-bundle
+*.p7b
+*.p7s
+*.pfx
+*.p12
+
+# Password manager specific
+master_password.txt
+export_passwords.*
+backup_passwords.*
+recovery_codes.*

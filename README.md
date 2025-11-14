@@ -1,51 +1,115 @@
-# SilentLock Password Manager
+# 🔐 SilentLock Password Manager
 
-## Overview
-SilentLock is a professional, secure password manager that runs silently in the background on Windows, automatically detecting login forms and managing credentials with military-grade encryption. Features a custom logo and professional splash screen for a polished user experience.
+<div align="center">
+  <img src="assets/logo.png" alt="SilentLock Logo" width="128" height="128">
+  
+  <h3>Professional, Ethical Password Manager for Personal Use</h3>
+  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+  [![Platform: Windows](https://img.shields.io/badge/platform-Windows-blue)](https://www.microsoft.com/windows)
+  [![Security: AES-256](https://img.shields.io/badge/encryption-AES--256-green)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
+  
+  <p>Secure, intelligent credential management with real-time browser monitoring</p>
+</div>
 
-## ✅ FULLY IMPLEMENTED FEATURES
+## ✨ Key Features
 
-### 🎨 **PROFESSIONAL BRANDING - ENHANCED**
-- **Custom Logo Integration** - SilentLock logo displays as application icon ✅
-- **Professional Splash Screen** - Loading screen with logo during startup ✅
-- **Windows Icon Support** - ICO and PNG formats for full Windows integration ✅
-- **Taskbar Logo Display** - Logo appears in Windows taskbar and Alt+Tab switcher ✅
-- **Application Header Logo** - 64x64 logo displayed in main application window ✅
-- **Polished Startup Experience** - Professional 3-second loading sequence ✅
+### 🛡️ **Security First**
+- **AES-256 Encryption**: Military-grade encryption for stored passwords
+- **PBKDF2 Key Derivation**: Secure master password protection  
+- **Local Storage Only**: No cloud sync, complete privacy
+- **Secure Memory Handling**: Protected against memory dumps
+- **Zero Network Transmission**: Credentials never leave your device
 
-### 🚀 **AUTOMATIC BROWSER IMPORT - ENHANCED**
-- **Microsoft Edge** - 202 passwords successfully imported ✅
-- **Chrome** - Full DPAPI/AES-GCM decryption support ✅
-- **Firefox** - Complete import capability ✅
-- **100% Automatic** - No user review or confirmation required
-- **Silent Operation** - Runs completely in background
-- **Smart Duplicate Prevention** - Intelligent detection of existing entries
-- **One-time Execution** - Automatic flag prevents repeated imports
+### 🌐 **Intelligent Browser Integration**
+- **Real-time Detection**: Automatically detects login forms across all browsers
+- **Universal Browser Support**: Chrome, Firefox, Edge, Opera, Brave, and more
+- **Smart Form Recognition**: Advanced AI-powered login page detection
+- **One-Click Auto-fill**: Instant credential insertion with keyboard shortcuts
+- **Multi-step Login Support**: Handles complex authentication flows
 
-### 🔄 **Smart Auto-Fill - ENHANCED WITH LOGIN VERIFICATION**
-- **Intelligent Detection**: Recognizes login forms across ALL applications
-- **Login Success Verification**: Waits for successful authentication before saving credentials ✨ NEW
-- **Multi-Step Login Support**: Handles username-first, password-later flows ✨ NEW
-- **User Confirmation**: Permission-based credential filling
-- **Multi-Account Support**: Handles multiple accounts for same site/app
-- **Universal Coverage**: Works with 52+ application types
-- **Complete Self-Exclusion**: Never triggers auto-fill on SilentLock's own windows ✨ NEW
-- **Smart Targeting**: Only activates on external browsers and applications
-- **Duplicate Prevention**: Advanced duplicate detection prevents credential conflicts
+### 🖥️ **Professional User Experience**
+- **Clean Modern GUI**: Intuitive interface built with tkinter
+- **System Tray Integration**: Runs silently in background
+- **Windows Startup**: Automatic launch on system boot
+- **Professional Installers**: NSIS, Inno Setup, and MSI packages available
+- **Self-monitoring Protection**: Prevents interference with own dialogs
 
-### 🏁 **Windows Background Service**
-- **Auto-Start**: Automatic startup with Windows
-- **Silent Operation**: Runs continuously without user interaction
-- **System Integration**: Proper Windows Registry integration
-- **24/7 Monitoring**: Persistent password detection and management
+### � **Advanced Management**
+- **Credential Organization**: Search, sort, and categorize passwords
+- **Secure Notes**: Encrypted storage for sensitive information  
+- **QR Code Generation**: Easy sharing of Wi-Fi passwords and more
+- **Browser Import**: Import existing passwords from major browsers
+- **Audit Logging**: Track access and usage patterns
+- **Backup & Export**: Secure data management tools
 
-### ⚠️ Ethical Use Notice
+## 🚀 Quick Start
 
-**This software is designed for personal use only**. By using SilentLock, you agree to:
-- Use it only on devices you own or have explicit permission to use
-- Only save your own credentials with your consent
-- Respect privacy and security of others
-- Not use it for unauthorized access to any systems
+### Option 1: Download Installer (Recommended)
+1. **Download** the latest installer from [Releases](../../releases)
+2. **Run** the installer and follow setup wizard
+3. **Launch** SilentLock from Start Menu or desktop shortcut
+4. **Set** your master password and start managing credentials
+
+### Option 2: Portable Version
+1. **Download** `SilentLock-Portable.zip` from [Releases](../../releases)
+2. **Extract** to any folder
+3. **Run** `SilentLockPasswordManager.exe`
+4. **No installation** required - perfect for USB drives
+
+### Option 3: Run from Source
+```bash
+# Clone repository
+git clone https://github.com/Lintshiwe/SilentLock.git
+cd SilentLock
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run application
+python main.py
+```
+
+## 📋 System Requirements
+
+- **OS**: Windows 10/11 (64-bit)
+- **RAM**: 256 MB minimum, 512 MB recommended
+- **Storage**: 50 MB for installation
+- **Python**: 3.8+ (only for source installation)
+- **Browsers**: Any modern browser (Chrome, Firefox, Edge, etc.)
+
+## 🛠️ Installation Methods
+
+### Traditional Installer (NSIS)
+- **Size**: ~27 MB
+- **Type**: Traditional Windows setup wizard
+- **Features**: Start menu shortcuts, uninstaller, registry integration
+
+### Modern Installer (Inno Setup)  
+- **Size**: ~22 MB
+- **Type**: Modern wizard-based installer
+- **Features**: Desktop shortcuts, modern UI, compression
+
+### Enterprise Installer (MSI)
+- **Size**: ~25 MB  
+- **Type**: Microsoft Installer package
+- **Features**: Group Policy deployment, enterprise management
+
+### Portable Package
+- **Size**: ~27 MB
+- **Type**: ZIP archive
+- **Features**: No installation required, USB-friendly
+
+## ⚠️ **Ethical Use Statement**
+
+**This software is designed for personal use only** with these principles:
+
+- ✅ **Consent Required**: Only saves credentials with user permission
+- ✅ **Transparency**: Clear about all data handling practices
+- ✅ **Privacy First**: No unauthorized access to other systems
+- ✅ **Local Only**: No cloud storage or data transmission
+- ✅ **Open Source**: Full code visibility for trust verification
 
 ## 🔒 Security Features
 
