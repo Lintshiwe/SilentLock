@@ -20,9 +20,10 @@ wheels/
 *.egg
 MANIFEST
 
-# PyInstaller
+# PyInstaller - exclude built executables and distribution files
 dist/
 build/
+*.spec
 
 # Environment variables and secrets
 .env
@@ -35,12 +36,25 @@ secrets.json
 config.json
 credentials.json
 
-# Database files (personal data)
+# Configuration files that may contain sensitive data
+config.ini
+settings.ini
+local_config.py
+personal_config.py
+
+# Database files (personal data) - CRITICAL TO EXCLUDE
 *.db
 *.sqlite
 *.sqlite3
 passwords.db
 silentlock.db
+data/
+database/
+
+# Encrypted configuration files
+*.enc
+admin_config.enc
+user_config.enc
 
 # Logs
 *.log
@@ -78,13 +92,10 @@ tmp/
 *.bak
 *.backup
 
-# Personal configuration
-personal_config.py
-local_settings.py
-
 # Test files with real data
 test_real_*.py
 real_test_*.py
+*_real_test.py
 
 # Installer output (keep source scripts, ignore built installers)
 installer/*.exe
@@ -100,8 +111,14 @@ installer/*.zip
 *.pfx
 *.p12
 
-# Password manager specific
+# Password manager specific sensitive files
 master_password.txt
 export_passwords.*
 backup_passwords.*
 recovery_codes.*
+user_data/
+profiles/
+
+# Windows crash dumps
+*.dmp
+*.mdmp
