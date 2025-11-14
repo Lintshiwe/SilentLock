@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" 
+           Name="SilentLock Password Manager" 
+           Language="1033" 
+           Version="1.0.0.0" 
+           Manufacturer="SilentLock Development Team" 
+           UpgradeCode="{12345678-1234-1234-1234-123456789012}">
+    
+    <Package InstallerVersion="200" 
+             Compressed="yes" 
+             InstallScope="perMachine" 
+             Description="Secure, Ethical Password Manager for Personal Use"
+             Comments="Secure, Ethical Password Manager for Personal Use"
+             Manufacturer="SilentLock Development Team" />
+    
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    
+    <Feature Id="ProductFeature" Title="SilentLock Password Manager" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="SilentLock Password Manager" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="SilentLock Password Manager"/>
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+    </Directory>
+    
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable">
+        <File Id="MainEXE" 
+              Source="dist\SilentLockPasswordManager\SilentLockPasswordManager.exe" 
+              KeyPath="yes" 
+              Checksum="yes">
+          <Shortcut Id="desktopShortcut" 
+                    Directory="DesktopFolder" 
+                    Name="SilentLock Password Manager" 
+                    WorkingDirectory="INSTALLFOLDER" 
+                    Icon="MainIcon" />
+          <Shortcut Id="startMenuShortcut" 
+                    Directory="ApplicationProgramsFolder" 
+                    Name="SilentLock Password Manager" 
+                    WorkingDirectory="INSTALLFOLDER" 
+                    Icon="MainIcon" />
+        </File>
+      </Component>
+    </ComponentGroup>
+    
+    <Icon Id="MainIcon" SourceFile="assets\logo.ico" />
+    <Property Id="ARPPRODUCTICON" Value="MainIcon" />
+    
+  </Product>
+</Wix>

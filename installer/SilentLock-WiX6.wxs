@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="SilentLock Password Manager" 
+           Language="1033" 
+           Version="1.0.0.0" 
+           Manufacturer="SilentLock Development Team" 
+           UpgradeCode="{12345678-1234-1234-1234-123456789012}">
+    
+    <SummaryInformation Keywords="Password Manager, Security, SilentLock"
+                        Description="Secure, Ethical Password Manager for Personal Use"
+                        Manufacturer="SilentLock Development Team" />
+    
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="SilentLock.cab" EmbedCab="yes" />
+    
+    <Feature Id="ProductFeature" Title="SilentLock Password Manager" Level="1">
+      <ComponentRef Id="MainExecutable" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+    
+    <StandardDirectory Id="ProgramFilesFolder">
+      <Directory Id="INSTALLFOLDER" Name="SilentLock Password Manager" />
+    </StandardDirectory>
+    
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="SilentLock Password Manager"/>
+    </StandardDirectory>
+    
+    <StandardDirectory Id="DesktopFolder"/>
+    
+    <Component Id="MainExecutable" Directory="INSTALLFOLDER">
+      <!-- Main executable file -->
+      <File Id="MainEXE" 
+            Source="..\dist\SilentLockPasswordManager\SilentLockPasswordManager.exe" 
+            KeyPath="yes" />
+      
+      <!-- Registry entry for installation tracking -->
+      <RegistryValue Root="HKCU" 
+                     Key="Software\SilentLock\PasswordManager"
+                     Name="InstallPath"
+                     Type="string" 
+                     Value="[INSTALLFOLDER]"
+                     KeyPath="no" />
+    </Component>
+    
+    <Component Id="ApplicationShortcut" Directory="ApplicationProgramsFolder">
+      <Shortcut Id="StartMenuShortcut" 
+                Name="SilentLock Password Manager" 
+                Target="[INSTALLFOLDER]SilentLockPasswordManager.exe"
+                WorkingDirectory="INSTALLFOLDER" 
+                Icon="MainIcon" />
+                
+      <Shortcut Id="DesktopShortcut" 
+                Directory="DesktopFolder"
+                Name="SilentLock Password Manager" 
+                Target="[INSTALLFOLDER]SilentLockPasswordManager.exe"
+                WorkingDirectory="INSTALLFOLDER" 
+                Icon="MainIcon" />
+                
+      <RemoveFolder Id="ApplicationProgramsFolderRemove" On="uninstall"/>
+      
+      <RegistryValue Root="HKCU" 
+                     Key="Software\SilentLock\PasswordManager"
+                     Name="Shortcuts"
+                     Type="integer" 
+                     Value="1"
+                     KeyPath="yes" />
+    </Component>
+    
+    <Icon Id="MainIcon" SourceFile="..\assets\logo.ico" />
+    <Property Id="ARPPRODUCTICON" Value="MainIcon" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/Lintshiwe/SilentLock" />
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/Lintshiwe/SilentLock" />
+    
+  </Package>
+</Wix>

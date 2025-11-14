@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run SilentLock Password Manager",
+			"type": "shell",
+			"command": "C:/Users/brigh/OneDrive/Desktop/Projects/SilentLock/.venv/Scripts/python.exe",
+			"args": [
+				"main.py"
+			],
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
